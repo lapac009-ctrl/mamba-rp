@@ -3,270 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamba RP | Sve Definicije</title>
+    <title>Mamba RP | Official</title>
     <style>
         :root {
             --neon-blue: #00d2ff;
             --neon-pink: #ff0055;
             --neon-green: #00ff88;
-            --neon-yellow: #ffaa00;
             --glass: rgba(255, 255, 255, 0.05);
         }
 
-        body {
-            background-color: #050505;
-            color: #eee;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        body { background-color: #050505; color: #eee; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 1000px; width: 100%; }
 
-        .container { max-width: 1100px; width: 100%; }
+        /* Admin Login Style */
+        .admin-auth { background: var(--glass); padding: 10px; border-radius: 10px; margin-bottom: 20px; border: 1px dashed rgba(255,255,255,0.1); display: flex; gap: 10px; align-items: center; justify-content: center; }
+        .admin-auth input { background: black; border: 1px solid var(--neon-blue); color: white; padding: 5px 10px; border-radius: 5px; outline: none; }
+        
+        .header-card { background: linear-gradient(135deg, rgba(0,210,255,0.1), rgba(255,0,85,0.1)); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 50px 20px; border-radius: 30px; text-align: center; margin-bottom: 40px; }
+        h1 { color: var(--neon-blue); text-transform: uppercase; letter-spacing: 8px; margin: 0; font-size: 3em; }
 
-        .header-card {
-            background: linear-gradient(135deg, rgba(0,210,255,0.1), rgba(255,0,85,0.1));
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 60px 20px;
-            border-radius: 40px;
-            text-align: center;
-            margin-bottom: 50px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.9);
-        }
+        .management-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .manager-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; text-align: center; }
+        .manager-card.dev { border-color: var(--neon-blue); box-shadow: 0 0 10px rgba(0,210,255,0.2); }
+        .manager-role { color: var(--neon-pink); font-size: 0.8em; display: block; }
 
-        h1 { color: var(--neon-blue); text-transform: uppercase; letter-spacing: 10px; margin: 0; font-size: 3.5em; text-shadow: 0 0 30px rgba(0, 210, 255, 0.6); }
-        .rp-def { color: var(--neon-green); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; display: block; font-size: 1.2em; }
+        /* Ticket System Style */
+        .ticket-section { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; margin-top: 50px; }
+        .ticket-form input, .ticket-form textarea { width: 100%; background: rgba(0,0,0,0.5); border: 1px solid #333; color: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; box-sizing: border-box; }
+        .btn-send { background: var(--neon-blue); color: black; border: none; padding: 10px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-send:hover { background: var(--neon-green); transform: scale(1.05); }
 
-        .discord-btn {
-            display: inline-block;
-            background: #5865F2;
-            color: white;
-            padding: 15px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 25px;
-            transition: 0.3s;
-        }
+        .ticket-list { margin-top: 20px; }
+        .ticket-item { background: rgba(255,255,255,0.03); border: 1px solid #222; padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid var(--neon-pink); }
+        .ticket-user { color: var(--neon-blue); font-weight: bold; font-size: 0.9em; }
+        .admin-reply-box { margin-top: 10px; padding-left: 15px; border-left: 2px solid var(--neon-green); color: var(--neon-green); font-style: italic; font-size: 0.95em; }
+        
+        #adminPanel { display: none; margin-top: 20px; border-top: 2px solid var(--neon-pink); padding-top: 20px; }
+        .hidden { display: none !important; }
 
-        .section-title {
-            text-align: center; color: #fff; text-transform: uppercase; letter-spacing: 5px;
-            margin: 60px 0 30px; border-bottom: 2px solid var(--neon-pink); display: block; padding-bottom: 10px;
-        }
-
-        .management-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 60px;
-        }
-
-        .manager-card {
-            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; transition: 0.3s;
-        }
-
-        .manager-card.dev { border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
-        .manager-card:hover { transform: translateY(-10px); border-color: var(--neon-pink); }
-        .manager-name { font-weight: bold; font-size: 1.2em; display: block; color: #fff; }
-        .manager-role { color: var(--neon-pink); font-size: 0.8em; text-transform: uppercase; }
-
-        .rule-card {
-            background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-left: 5px solid var(--neon-blue);
-            padding: 25px; border-radius: 15px; margin-bottom: 15px; transition: 0.3s;
-        }
-
-        .rule-card:hover { transform: translateX(10px); background: rgba(255,255,255,0.08); border-left-color: var(--neon-green); }
-        .rule-name { color: var(--neon-blue); font-weight: bold; font-size: 1.4em; display: block; margin-bottom: 5px; }
-        .def-text { color: #fff; font-weight: 500; display: block; margin-bottom: 10px; }
-        .ex-box { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 10px; border-left: 2px solid var(--neon-green); }
-        .ex-text { color: var(--neon-green); font-size: 0.9em; display: block; margin-bottom: 3px; }
-
-        footer { margin-top: 80px; text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: #666; }
+        footer { margin-top: 60px; padding: 20px; color: #444; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="admin-auth">
+        <span style="font-size: 0.8em; color: #666;">Admin Access:</span>
+        <input type="password" id="adminCode" placeholder="Unesi kod..." oninput="checkAdmin()">
+    </div>
+
     <div class="header-card">
         <h1>Mamba RP</h1>
-        <span class="rp-def">Simulacija RP Pravog Života</span>
-        <a href="https://discord.gg/NGrFnJsRF" target="_blank" class="discord-btn">DISCORD SERVER</a>
+        <span style="color: var(--neon-green); font-weight: bold;">Simulacija RP Pravog Života</span>
     </div>
 
-    <h2 class="section-title">Menadžment Tim</h2>
     <div class="management-grid">
-        <div class="manager-card dev"><span class="manager-name">ognjen_123</span><span class="manager-role">Developer & Menadžer</span></div>
-        <div class="manager-card"><span class="manager-name">Stepic</span><span class="manager-role">Menadžer</span></div>
-        <div class="manager-card"><span class="manager-name">Nikola</span><span class="manager-role">Menadžer</span></div>
-        <div class="manager-card"><span class="manager-name">Arnel</span><span class="manager-role">Menadžer</span></div>
-        <div class="manager-card"><span class="manager-name">Peki</span><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card dev"><strong>ognjen_123</strong><span class="manager-role">Developer & Menadžer</span></div>
+        <div class="manager-card"><strong>Stepic</strong><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><strong>Nikola</strong><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><strong>Arnel</strong><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><strong>Peki</strong><span class="manager-role">Menadžer</span></div>
     </div>
 
-    <h2 class="section-title">Sva RP Pravila</h2>
-
-    <div class="rule-card">
-        <span class="rule-name">RP - RolePlay</span>
-        <span class="def-text">Simulacija stvarnog zivota</span>
-        <div class="ex-box"><span class="ex-text">Primer: Ponasas se kao u pravom zivotu, bez krsenja rp pravila.</span></div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">DM - DeathMatching</span>
-        <span class="def-text">Ubijanje nekog igraca bez ikakvog razloga.</span>
-        <div class="ex-box">
-            <span class="ex-text">Primer: Stojis ispred banke i ubijes igraca koji samo prolazi.</span>
-            <span class="ex-text">Primer: Ubijes igraca koji pije limunadu ispred kafica.</span>
+    <div class="ticket-section">
+        <h2 style="color: #fff; text-transform: uppercase;">Žalbe na igrače (Tiketi)</h2>
+        
+        <div id="userTicketSection">
+            <div class="ticket-form">
+                <input type="text" id="userName" placeholder="Vaše Ime i Prezime (IC)">
+                <textarea id="ticketMessage" rows="4" placeholder="Opišite vašu žalbu detaljno..."></textarea>
+                <button class="btn-send" onclick="sendTicket()">Pošalji Tiket</button>
+            </div>
+            <div id="myTickets" class="ticket-list">
+                <h4 style="color: #666;">Vaši Tiketi:</h4>
+                </div>
         </div>
-    </div>
 
-    <div class="rule-card">
-        <span class="rule-name">MG - Meta Gaming</span>
-        <span class="def-text">Koristenje OOC informacija u IC korist / Mesanje OOC i IC chatova.</span>
-        <div class="ex-box">
-            <span class="ex-text">MG Nick: Koriscenje imena koje vidis iznad glave u IC chatu.</span>
-            <span class="ex-text">MG Skin: Policajac po skinu "zna" da si clan bande.</span>
-            <span class="ex-text">Primer: Javljanje o raciji koju si saznao na forumu a ne kroz RP.</span>
+        <div id="adminPanel">
+            <h2 style="color: var(--neon-pink);">Admin Panel - Sve Žalbe</h2>
+            <div id="allTicketsList" class="ticket-list"></div>
         </div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">PG - Power Gaming</span>
-        <span class="def-text">Nemoguca radnja u pravom zivotu.</span>
-        <div class="ex-box">
-            <span class="ex-text">Primer: Ronjenje i koriscenje droge, surfovanje na bajsu, skok sa zgrade bez povreda.</span>
-        </div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RP2WIN - Roleplay 2 Win</span>
-        <span class="def-text">RPanje (/me i /do) samo da bi izasli kao pobednik.</span>
-        <div class="ex-box"><span class="ex-text">Primer: Rpas da je droga u kuci tek kad te policajac pretrese i nadje je.</span></div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">QS - Quick Swapping</span>
-        <span class="def-text">Menjanje oruzja na Q i E bez koristenja /me i /do.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CS - Crack Shooting</span>
-        <span class="def-text">Iskoristavanje BUGova sa oruzjem (C-BUG, 2 Shots).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CK - Character Kill</span>
-        <span class="def-text">Konstantno mucenje nekog igraca (pretnje banom, teranje na novi nalog).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">NonRP - Non RolePlay</span>
-        <span class="def-text">Ometanje igraca u RP radnjama ili krsenje pravila.</span>
-        <div class="ex-box"><span class="ex-text">Primer: Sletanje helikopterom na sred ulice ili spamanje dok policajac RP-a.</span></div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">GFA & DFA (Gun/Drug From Ass)</span>
-        <span class="def-text">Non-RP vadjenje oruzja ili droge iz inventorija bez komandi.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">NJ - Ninja Jacking</span>
-        <span class="def-text">Kradja vozila u pokretu izbacivanjem igraca na 'F'.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CR - Chicken Running</span>
-        <span class="def-text">Trcanje cik-cak u toku pucnjave da vas ne pogode.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">BA - Bug Abusing</span>
-        <span class="def-text">Iskoristavanje bugova igrice ili skripte (npr. animacije za prolaz kroz zid).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">LTA - Logging to Avoid</span>
-        <span class="def-text">Napustanje servera (/q) da bi izbegli policiju ili kaznu.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">DTA - Die to Avoid</span>
-        <span class="def-text">Samoubistvo da bi izbegli hapsenje ili RP.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RPS - RolePlay Superman</span>
-        <span class="def-text">Ponasanje kao heroj bez straha za zivot.</span>
-        <div class="ex-box"><span class="ex-text">Primer: Sam na 10 policajaca ili pljackanje banke solo.</span></div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">FA - F-Abusing</span>
-        <span class="def-text">Spamanje ulaska/izlaska iz enterijera da vas ne bi tazovali.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">SK - Spawn Kill</span>
-        <span class="def-text">Ubistvo igraca odmah na mestu gde se spawnuje.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">DB - Drive By</span>
-        <span class="def-text">Gazenje ljudi vozilom ili pucanje iz vozila.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RK - Revenge Killing</span>
-        <span class="def-text">Ubistvo igraca iz osvete odmah nakon spawna.</span>
-    </div>
-
-    <h2 class="section-title">Napredna & Admin Pravila</h2>
-
-    <div class="rule-card">
-        <span class="rule-name">ETRC - Exploit Red Circle</span>
-        <span class="def-text">Iskoristavanje markera na mapi za lociranje.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">PVE & PVP</span>
-        <span class="def-text">PVE: Divljanje po tudjoj imovini. | PVP: Sukob dva igraca.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">AA / AE / VA / PA (Abusing)</span>
-        <span class="def-text">Iskoristavanje Admin, VIP ili Promoter povlastica/komandi u svoju korist.</span>
-        <div class="ex-box"><span class="ex-text">Primer: Admin seta sebi novac ili se porta preko granice sa ilegalnim stvarima.</span></div>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">EASA - Exploit Admin Spectating</span>
-        <span class="def-text">Proveravanje komandama (npr /w) da li vas admin trenutno posmatra.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">TK - Team Kill</span>
-        <span class="def-text">Ubistvo igraca iz svoje organizacije.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">KOS / MK (Kill on Sight / Multi Kill)</span>
-        <span class="def-text">Ubijanje svakoga koga vidis bez gledanja nicka ili razloga.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">MF - Money Farming</span>
-        <span class="def-text">Prebacivanje novca sa vise novih naloga na jedan glavni.</span>
-    </div>
-
-    <div class="rule-card" style="border-left-color: var(--neon-yellow);">
-        <span class="rule-name" style="color: var(--neon-yellow);">Skracenice</span>
-        <span class="def-text">IC: In Character | OOC: Out Of Character | RL: Real Life</span>
     </div>
 
     <footer>
         <p>Mamba Roleplay / Developer: ognjen_123</p>
     </footer>
 </div>
+
+<script>
+    const ADMIN_SECRET = "karamobalakaneh";
+    let isAdmin = false;
+
+    // Provera admina
+    function checkAdmin() {
+        const code = document.getElementById('adminCode').value;
+        if (code === ADMIN_SECRET) {
+            isAdmin = true;
+            document.getElementById('adminPanel').style.display = 'block';
+            document.getElementById('userTicketSection').classList.add('hidden');
+            loadAllTickets();
+        } else {
+            isAdmin = false;
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('userTicketSection').classList.remove('hidden');
+        }
+    }
+
+    // Slanje tiketa
+    function sendTicket() {
+        const name = document.getElementById('userName').value;
+        const msg = document.getElementById('ticketMessage').value;
+        if (!name || !msg) return alert("Popuni sva polja!");
+
+        const ticket = {
+            id: Date.now(),
+            user: name,
+            message: msg,
+            reply: "",
+            date: new Date().toLocaleString()
+        };
+
+        let tickets = JSON.parse(localStorage.getItem('mamba_tickets') || "[]");
+        tickets.push(ticket);
+        localStorage.setItem('mamba_tickets', JSON.stringify(tickets));
+
+        document.getElementById('userName').value = "";
+        document.getElementById('ticketMessage').value = "";
+        loadMyTickets();
+    }
+
+    // Učitaj samo moje tikete (za obične ljude)
+    function loadMyTickets() {
+        const list = document.getElementById('myTickets');
+        list.innerHTML = '<h4 style="color: #666;">Vaši Tiketi:</h4>';
+        const tickets = JSON.parse(localStorage.getItem('mamba_tickets') || "[]");
+        
+        // U realnosti bi ovde išao login sistem, ali za static sajt koristimo Session storage
+        tickets.forEach(t => {
+            const div = document.createElement('div');
+            div.className = 'ticket-item';
+            div.innerHTML = `
+                <div class="ticket-user">${t.user} <span style="color:#444; font-size:0.7em;">(${t.date})</span></div>
+                <div style="margin-top:5px;">${t.message}</div>
+                ${t.reply ? `<div class="admin-reply-box"><strong>ODGOVOR ADMINA:</strong> ${t.reply}</div>` : `<div style="color:#666; font-size:0.8em; margin-top:5px;">Sačekajte odgovor...</div>`}
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    // Admin učitava sve (kad ukuca kod)
+    function loadAllTickets() {
+        const list = document.getElementById('allTicketsList');
+        list.innerHTML = "";
+        const tickets = JSON.parse(localStorage.getItem('mamba_tickets') || "[]");
+
+        tickets.forEach((t, index) => {
+            const div = document.createElement('div');
+            div.className = 'ticket-item';
+            div.innerHTML = `
+                <div class="ticket-user">Od: ${t.user}</div>
+                <div style="margin-top:5px;">${t.message}</div>
+                <div class="admin-reply-box">
+                    <input type="text" id="reply_${index}" placeholder="Napiši odgovor..." style="width:70%; background:#111; border:1px solid #333; color:white; padding:5px;">
+                    <button onclick="replyTicket(${index})" style="padding:5px 10px; cursor:pointer; background:var(--neon-green); border:none; border-radius:5px;">Odgovori</button>
+                </div>
+                ${t.reply ? `<div style="color:white; margin-top:10px;">Trenutni odgovor: ${t.reply}</div>` : ""}
+                <button onclick="deleteTicket(${index})" style="margin-top:10px; background:#ff0055; color:white; border:none; border-radius:5px; padding:3px 8px; font-size:0.7em; cursor:pointer;">Obriši Tiket</button>
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    function replyTicket(index) {
+        const replyText = document.getElementById(`reply_${index}`).value;
+        let tickets = JSON.parse(localStorage.getItem('mamba_tickets') || "[]");
+        tickets[index].reply = replyText;
+        localStorage.setItem('mamba_tickets', JSON.stringify(tickets));
+        loadAllTickets();
+    }
+
+    function deleteTicket(index) {
+        let tickets = JSON.parse(localStorage.getItem('mamba_tickets') || "[]");
+        tickets.splice(index, 1);
+        localStorage.setItem('mamba_tickets', JSON.stringify(tickets));
+        loadAllTickets();
+    }
+
+    loadMyTickets();
+</script>
 
 </body>
 </html>
