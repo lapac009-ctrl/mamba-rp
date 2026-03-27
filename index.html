@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamba RP | Official Rules</title>
+    <title>Mamba RP | Sve Definicije</title>
     <style>
         :root {
             --neon-blue: #00d2ff;
@@ -16,7 +16,7 @@
         body {
             background-color: #050505;
             color: #eee;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -26,7 +26,6 @@
 
         .container { max-width: 1100px; width: 100%; }
 
-        /* Header Section */
         .header-card {
             background: linear-gradient(135deg, rgba(0,210,255,0.1), rgba(255,0,85,0.1));
             backdrop-filter: blur(20px);
@@ -38,122 +37,51 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.9);
         }
 
-        h1 { 
-            color: var(--neon-blue); 
-            text-transform: uppercase; 
-            letter-spacing: 10px; 
-            margin: 0;
-            font-size: 4em;
-            text-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
-        }
+        h1 { color: var(--neon-blue); text-transform: uppercase; letter-spacing: 10px; margin: 0; font-size: 3.5em; text-shadow: 0 0 30px rgba(0, 210, 255, 0.6); }
+        .rp-def { color: var(--neon-green); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; display: block; font-size: 1.2em; }
 
-        .rp-def {
-            color: var(--neon-green);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 15px;
-            display: block;
-            font-size: 1.2em;
-        }
-
-        /* Discord Button */
         .discord-btn {
             display: inline-block;
             background: #5865F2;
             color: white;
-            padding: 18px 40px;
-            border-radius: 15px;
+            padding: 15px 35px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 30px;
+            margin-top: 25px;
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
         }
-        .discord-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(88, 101, 242, 0.6); }
 
-        /* Management Section */
         .section-title {
-            text-align: center;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin: 60px 0 30px;
-            border-bottom: 2px solid var(--neon-pink);
-            display: inline-block;
-            width: 100%;
-            padding-bottom: 10px;
+            text-align: center; color: #fff; text-transform: uppercase; letter-spacing: 5px;
+            margin: 60px 0 30px; border-bottom: 2px solid var(--neon-pink); display: block; padding-bottom: 10px;
         }
 
         .management-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 60px;
         }
 
         .manager-card {
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s;
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center; transition: 0.3s;
         }
 
-        .manager-card.dev {
-            border: 1px solid var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
-        }
-
-        .manager-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-10px);
-            border-color: var(--neon-pink);
-        }
-
+        .manager-card.dev { border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 210, 255, 0.2); }
+        .manager-card:hover { transform: translateY(-10px); border-color: var(--neon-pink); }
         .manager-name { font-weight: bold; font-size: 1.2em; display: block; color: #fff; }
-        .manager-role { color: var(--neon-pink); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
-        .dev-tag { color: var(--neon-blue); font-size: 0.7em; font-weight: bold; }
-
-        /* Rules Cards */
-        .rules-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
+        .manager-role { color: var(--neon-pink); font-size: 0.8em; text-transform: uppercase; }
 
         .rule-card {
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-left: 5px solid var(--neon-blue);
-            padding: 25px;
-            border-radius: 15px;
-            transition: 0.3s;
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-left: 5px solid var(--neon-blue);
+            padding: 25px; border-radius: 15px; margin-bottom: 15px; transition: 0.3s;
         }
 
-        .rule-card:hover {
-            transform: translateX(15px);
-            background: rgba(255,255,255,0.08);
-            border-left-color: var(--neon-green);
-        }
+        .rule-card:hover { transform: translateX(10px); background: rgba(255,255,255,0.08); border-left-color: var(--neon-green); }
+        .rule-name { color: var(--neon-blue); font-weight: bold; font-size: 1.4em; display: block; margin-bottom: 5px; }
+        .def-text { color: #fff; font-weight: 500; display: block; margin-bottom: 10px; }
+        .ex-box { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 10px; border-left: 2px solid var(--neon-green); }
+        .ex-text { color: var(--neon-green); font-size: 0.9em; display: block; margin-bottom: 3px; }
 
-        .rule-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .rule-name { color: var(--neon-blue); font-weight: bold; font-size: 1.4em; }
-        .rule-tag { background: rgba(0,210,255,0.1); color: var(--neon-blue); padding: 4px 10px; border-radius: 5px; font-size: 0.7em; font-weight: bold; }
-        
-        .def-text { color: #fff; font-weight: 500; margin-bottom: 10px; display: block; }
-        .ex-box { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; border-left: 2px solid var(--neon-green); }
-        .ex-text { color: var(--neon-green); font-size: 0.9em; display: block; margin-bottom: 5px; }
-
-        footer {
-            margin-top: 100px;
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            width: 100%;
-            color: #666;
-        }
+        footer { margin-top: 80px; text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: #666; }
     </style>
 </head>
 <body>
@@ -162,66 +90,177 @@
     <div class="header-card">
         <h1>Mamba RP</h1>
         <span class="rp-def">Simulacija RP Pravog Života</span>
-        <p style="color: #888; max-width: 600px; margin: 20px auto;">Većina vas zna RP Pravila, ali evo za novajlije. Naučite pravila uz primere. Krenimo!</p>
-        <a href="https://discord.gg/NGrFnJsRF" target="_blank" class="discord-btn">PRIDRUŽI SE SERVERU</a>
+        <a href="https://discord.gg/NGrFnJsRF" target="_blank" class="discord-btn">DISCORD SERVER</a>
     </div>
 
     <h2 class="section-title">Menadžment Tim</h2>
     <div class="management-grid">
-        <div class="manager-card dev">
-            <span class="manager-name">ognjen_123</span>
-            <span class="manager-role">Menadžer</span><br>
-            <span class="dev-tag">Developer</span>
-        </div>
+        <div class="manager-card dev"><span class="manager-name">ognjen_123</span><span class="manager-role">Developer & Menadžer</span></div>
         <div class="manager-card"><span class="manager-name">Stepic</span><span class="manager-role">Menadžer</span></div>
         <div class="manager-card"><span class="manager-name">Nikola</span><span class="manager-role">Menadžer</span></div>
         <div class="manager-card"><span class="manager-name">Arnel</span><span class="manager-role">Menadžer</span></div>
         <div class="manager-card"><span class="manager-name">Peki</span><span class="manager-role">Menadžer</span></div>
     </div>
 
-    <h2 class="section-title">RP Pravila & Definicije</h2>
-    <div class="rules-wrapper">
+    <h2 class="section-title">Sva RP Pravila</h2>
 
-        <div class="rule-card">
-            <div class="rule-header"><span class="rule-name">RP - RolePlay</span><span class="rule-tag">BASIC</span></div>
-            <span class="def-text">Definicija: Simulacija stvarnog života.</span>
-            <div class="ex-box"><span class="ex-text">Primer: Ponašaš se kao u pravom životu, bez kršenja rp pravila.</span></div>
+    <div class="rule-card">
+        <span class="rule-name">RP - RolePlay</span>
+        <span class="def-text">Simulacija stvarnog zivota</span>
+        <div class="ex-box"><span class="ex-text">Primer: Ponasas se kao u pravom zivotu, bez krsenja rp pravila.</span></div>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DM - DeathMatching</span>
+        <span class="def-text">Ubijanje nekog igraca bez ikakvog razloga.</span>
+        <div class="ex-box">
+            <span class="ex-text">Primer: Stojis ispred banke i ubijes igraca koji samo prolazi.</span>
+            <span class="ex-text">Primer: Ubijes igraca koji pije limunadu ispred kafica.</span>
         </div>
+    </div>
 
-        <div class="rule-card">
-            <div class="rule-header"><span class="rule-name">DM - DeathMatching</span><span class="rule-tag">VIOLENCE</span></div>
-            <span class="def-text">Definicija: Ubijanje nekog igrača bez ikakvog razloga.</span>
-            <div class="ex-box">
-                <span class="ex-text">Primer: Ubiješ igrača koji hoda trotoarom dok ti stojiš ispred banke.</span>
-            </div>
+    <div class="rule-card">
+        <span class="rule-name">MG - Meta Gaming</span>
+        <span class="def-text">Koristenje OOC informacija u IC korist / Mesanje OOC i IC chatova.</span>
+        <div class="ex-box">
+            <span class="ex-text">MG Nick: Koriscenje imena koje vidis iznad glave u IC chatu.</span>
+            <span class="ex-text">MG Skin: Policajac po skinu "zna" da si clan bande.</span>
+            <span class="ex-text">Primer: Javljanje o raciji koju si saznao na forumu a ne kroz RP.</span>
         </div>
+    </div>
 
-        <div class="rule-card">
-            <div class="rule-header"><span class="rule-name">MG - Meta Gaming</span><span class="rule-tag">INFO</span></div>
-            <span class="def-text">Definicija: Korišćenje OOC informacija u IC korist.</span>
-            <div class="ex-box">
-                <span class="ex-text">MG Nick: Čitanje imena iznad glave i korišćenje toga u IC chatu.</span>
-            </div>
+    <div class="rule-card">
+        <span class="rule-name">PG - Power Gaming</span>
+        <span class="def-text">Nemoguca radnja u pravom zivotu.</span>
+        <div class="ex-box">
+            <span class="ex-text">Primer: Ronjenje i koriscenje droge, surfovanje na bajsu, skok sa zgrade bez povreda.</span>
         </div>
+    </div>
 
-        <div class="rule-card">
-            <div class="rule-header"><span class="rule-name">PG - Power Gaming</span><span class="rule-tag">REALISM</span></div>
-            <span class="def-text">Definicija: Radnja nemoguća u stvarnom životu.</span>
-            <div class="ex-box">
-                <span class="ex-text">Primer: Ronjenje i korišćenje droge istovremeno.</span>
-            </div>
-        </div>
+    <div class="rule-card">
+        <span class="rule-name">RP2WIN - Roleplay 2 Win</span>
+        <span class="def-text">RPanje (/me i /do) samo da bi izasli kao pobednik.</span>
+        <div class="ex-box"><span class="ex-text">Primer: Rpas da je droga u kuci tek kad te policajac pretrese i nadje je.</span></div>
+    </div>
 
-        <div class="rule-card">
-            <div class="rule-header"><span class="rule-name">LTA / DTA</span><span class="rule-tag">AVOID</span></div>
-            <span class="def-text">Definicija: Izlazak sa servera ili samoubistvo da bi izbegli RP.</span>
-        </div>
+    <div class="rule-card">
+        <span class="rule-name">QS - Quick Swapping</span>
+        <span class="def-text">Menjanje oruzja na Q i E bez koristenja /me i /do.</span>
+    </div>
 
-        <div class="rule-card" style="border-left-color: var(--neon-yellow);">
-            <div class="rule-header"><span class="rule-name" style="color: var(--neon-yellow);">Glavni Termini</span></div>
-            <span class="def-text">IC (In Character) | OOC (Out Of Character) | RL (Real Life)</span>
-        </div>
+    <div class="rule-card">
+        <span class="rule-name">CS - Crack Shooting</span>
+        <span class="def-text">Iskoristavanje BUGova sa oruzjem (C-BUG, 2 Shots).</span>
+    </div>
 
+    <div class="rule-card">
+        <span class="rule-name">CK - Character Kill</span>
+        <span class="def-text">Konstantno mucenje nekog igraca (pretnje banom, teranje na novi nalog).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">NonRP - Non RolePlay</span>
+        <span class="def-text">Ometanje igraca u RP radnjama ili krsenje pravila.</span>
+        <div class="ex-box"><span class="ex-text">Primer: Sletanje helikopterom na sred ulice ili spamanje dok policajac RP-a.</span></div>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">GFA & DFA (Gun/Drug From Ass)</span>
+        <span class="def-text">Non-RP vadjenje oruzja ili droge iz inventorija bez komandi.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">NJ - Ninja Jacking</span>
+        <span class="def-text">Kradja vozila u pokretu izbacivanjem igraca na 'F'.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">CR - Chicken Running</span>
+        <span class="def-text">Trcanje cik-cak u toku pucnjave da vas ne pogode.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">BA - Bug Abusing</span>
+        <span class="def-text">Iskoristavanje bugova igrice ili skripte (npr. animacije za prolaz kroz zid).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">LTA - Logging to Avoid</span>
+        <span class="def-text">Napustanje servera (/q) da bi izbegli policiju ili kaznu.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DTA - Die to Avoid</span>
+        <span class="def-text">Samoubistvo da bi izbegli hapsenje ili RP.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RPS - RolePlay Superman</span>
+        <span class="def-text">Ponasanje kao heroj bez straha za zivot.</span>
+        <div class="ex-box"><span class="ex-text">Primer: Sam na 10 policajaca ili pljackanje banke solo.</span></div>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">FA - F-Abusing</span>
+        <span class="def-text">Spamanje ulaska/izlaska iz enterijera da vas ne bi tazovali.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">SK - Spawn Kill</span>
+        <span class="def-text">Ubistvo igraca odmah na mestu gde se spawnuje.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DB - Drive By</span>
+        <span class="def-text">Gazenje ljudi vozilom ili pucanje iz vozila.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RK - Revenge Killing</span>
+        <span class="def-text">Ubistvo igraca iz osvete odmah nakon spawna.</span>
+    </div>
+
+    <h2 class="section-title">Napredna & Admin Pravila</h2>
+
+    <div class="rule-card">
+        <span class="rule-name">ETRC - Exploit Red Circle</span>
+        <span class="def-text">Iskoristavanje markera na mapi za lociranje.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">PVE & PVP</span>
+        <span class="def-text">PVE: Divljanje po tudjoj imovini. | PVP: Sukob dva igraca.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">AA / AE / VA / PA (Abusing)</span>
+        <span class="def-text">Iskoristavanje Admin, VIP ili Promoter povlastica/komandi u svoju korist.</span>
+        <div class="ex-box"><span class="ex-text">Primer: Admin seta sebi novac ili se porta preko granice sa ilegalnim stvarima.</span></div>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">EASA - Exploit Admin Spectating</span>
+        <span class="def-text">Proveravanje komandama (npr /w) da li vas admin trenutno posmatra.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">TK - Team Kill</span>
+        <span class="def-text">Ubistvo igraca iz svoje organizacije.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">KOS / MK (Kill on Sight / Multi Kill)</span>
+        <span class="def-text">Ubijanje svakoga koga vidis bez gledanja nicka ili razloga.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">MF - Money Farming</span>
+        <span class="def-text">Prebacivanje novca sa vise novih naloga na jedan glavni.</span>
+    </div>
+
+    <div class="rule-card" style="border-left-color: var(--neon-yellow);">
+        <span class="rule-name" style="color: var(--neon-yellow);">Skracenice</span>
+        <span class="def-text">IC: In Character | OOC: Out Of Character | RL: Real Life</span>
     </div>
 
     <footer>
