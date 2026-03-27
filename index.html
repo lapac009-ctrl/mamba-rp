@@ -3,41 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamba RP | Portfolio</title>
+    <title>Mamba RP | Pravila</title>
     <style>
         body {
-            background-color: #0a0a0a; /* Tamna pozadina */
+            background-color: #0a0a0a;
             color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Glassmorphism efekat */
-        .glass-card {
+        /* Glavni kontejner */
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Glassmorphism kartica za naslov */
+        .header-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             text-align: center;
-            width: 300px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
-        h1 { color: #00d2ff; } /* Neon plava */
-        p { opacity: 0.8; }
+        h1 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #aaa; font-style: italic; }
+
+        /* Stil za svako pravilo */
+        .rule-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #00d2ff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .rule-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateX(10px);
+        }
+
+        .rule-name {
+            color: #00d2ff;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .def { color: #fff; font-weight: 500; }
+        .example { color: #00ff88; font-size: 0.95em; display: block; margin-top: 5px; }
+        
+        strong { color: #ff0055; } /* Za skraćenice unutar primera */
+
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <h1>Mamba RP</h1>
-        <p>Uskoro stiže nešto moćno.</p>
-        <p>Roblox & Discord Developer</p>
+    <div class="container">
+        <div class="header-card">
+            <h1>Mamba RP Pravila</h1>
+            <p class="subtitle">Većina vas zna RP Pravila, ali evo za novajlije. Naučite pravila uz primere. Krenimo!</p>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">RP - RolePlay</span>
+            <span class="def">Definicija: Simulacija stvarnog života.</span>
+            <span class="example">Primer: Ponašaš se kao u pravom životu, bez kršenja pravila.</span>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">DM - DeathMatching</span>
+            <span class="def">Definicija: Ubijanje nekog igrača bez ikakvog razloga.</span>
+            <span class="example">Primer: Stojiš ispred banke i bez razloga ubiješ igrača koji prolazi.</span>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">MG - Meta Gaming</span>
+            <span class="def">Definicija: Korišćenje OOC informacija u IC korist.</span>
+            <span class="example">Primer: Vidiš ime iznad glave igrača i odmah ga osloviš imenom u IC chatu.</span>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">PG - Power Gaming</span>
+            <span class="def">Definicija: Radnja koja je nemoguća u stvarnosti (npr. surfovanje na bajsu).</span>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">LTA - Logging to Avoid</span>
+            <span class="def">Definicija: Napuštanje servera (/q) da bi izbegli kaznu ili policiju.</span>
+        </div>
+
+        <div class="rule-card">
+            <span class="rule-name">RPS - RolePlay Superman</span>
+            <span class="def">Definicija: Ponašaš se kao heroj (npr. ideš sam na 10 policajaca).</span>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; color: #555;">
+            <p>© 2026 Mamba Roleplay | Developed by Lapac</p>
+        </div>
     </div>
 
 </body>
