@@ -3,195 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamba RP | Sva Pravila</title>
+    <title>Mamba RP | Official</title>
     <style>
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-pink: #ff0055;
+            --neon-green: #00ff88;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
         body {
-            background-color: #0a0a0a;
+            background-color: #050505;
             color: #eee;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
+
+        /* Animated Background Dots */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,210,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -1;
+        }
+
         .container { max-width: 1000px; width: 100%; }
         
+        /* Header Section */
         .header-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 25px;
+            padding: 50px 20px;
+            border-radius: 30px;
             text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border-bottom: 3px solid var(--neon-blue);
         }
-        h1 { color: #00d2ff; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
-        .subtitle { color: #888; margin-top: 10px; }
 
-        .rule-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 5px solid #00d2ff;
-            margin-bottom: 15px;
-            padding: 20px;
+        h1 { 
+            color: var(--neon-blue); 
+            text-transform: uppercase; 
+            letter-spacing: 8px; 
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+        }
+
+        .rp-def {
+            color: var(--neon-green);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .subtitle { color: #888; margin-top: 15px; font-size: 1.1em; }
+
+        /* Discord Button */
+        .discord-btn {
+            display: inline-block;
+            background: #5865F2;
+            color: white;
+            padding: 15px 35px;
             border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+        }
+        .discord-btn:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 15px 30px rgba(88, 101, 242, 0.5);
+        }
+
+        /* Management Section */
+        .management-title {
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 40px 0 20px;
+            font-size: 1.5em;
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .manager-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
             transition: 0.3s;
         }
-        .rule-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            transform: translateX(10px);
-            border-left-color: #ff0055;
+
+        .manager-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--neon-pink);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 85, 0.2);
         }
-        .rule-name { color: #00d2ff; font-weight: bold; font-size: 1.3em; display: block; }
-        .def { color: #fff; display: block; margin: 5px 0; }
-        .ex { color: #00ff88; font-size: 0.95em; display: block; border-left: 2px solid rgba(0,255,136,0.3); padding-left: 10px; margin-top: 5px; }
-        
-        .cat-title { color: #ff0055; text-transform: uppercase; margin-top: 40px; margin-bottom: 15px; font-weight: bold; border-bottom: 1px solid #ff0055; display: inline-block; }
+
+        .manager-name {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+        }
+
+        .manager-role {
+            color: var(--neon-pink);
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
+        /* Rules */
+        .rule-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 5px solid var(--neon-blue);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s ease;
+        }
+
+        .rule-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(15px);
+            border-left-color: var(--neon-green);
+        }
+
+        .rule-name { color: var(--neon-blue); font-weight: bold; font-size: 1.3em; }
+        .def { color: #fff; display: block; margin: 8px 0; }
+        .ex { color: var(--neon-green); font-size: 0.95em; opacity: 0.9; }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            letter-spacing: 1px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header-card">
-        <h1>RP Pravila & Primeri</h1>
+        <h1>Mamba RP</h1>
+        <span class="rp-def">Simulacija RP Pravog Života</span>
         <p class="subtitle">Većina vas zna RP Pravila, ali evo za novajlije. Naučite pravila uz primere. Krenimo!</p>
+        <a href="https://discord.gg/NGrFnJsRF" target="_blank" class="discord-btn">DISCORD SERVER</a>
     </div>
 
-    <div class="rule-card">
-        <span class="rule-name">RP - RolePlay</span>
-        <span class="def">Definicija: Simulacija stvarnog života</span>
-        <span class="ex">Primer: Ponašaš se kao u pravom životu, bez kršenja rp pravila.</span>
+    <h2 class="management-title">Menadžment Tim</h2>
+    <div class="management-grid">
+        <div class="manager-card"><span class="manager-name">Stepic</span><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><span class="manager-name">Ognjen</span><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><span class="manager-name">Nikola</span><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><span class="manager-name">Arnel</span><span class="manager-role">Menadžer</span></div>
+        <div class="manager-card"><span class="manager-name">Peki</span><span class="manager-role">Menadžer</span></div>
     </div>
 
     <div class="rule-card">
         <span class="rule-name">DM - DeathMatching</span>
-        <span class="def">Definicija: Ubijanje nekog igrača bez ikakvog razloga.</span>
-        <span class="ex">Primer: Stojiš ispred banke, pušiš cigaretu i vidiš igrača kako hoda trotoarom, vadiš gun i ubiješ ga.</span>
+        <span class="def">Ubijanje nekog igrača bez ikakvog razloga.</span>
+        <span class="ex">Primer: Ubiješ igrača koji hoda trotoarom bez ikakvog dijaloga ili razloga.</span>
     </div>
 
     <div class="rule-card">
         <span class="rule-name">MG - Meta Gaming</span>
-        <span class="def">Definicija: Korištenje OOC informacija u IC korist / Mešanje OOC i IC chatova.</span>
-        <span class="ex">MG Nick: Dođete do igrača i pošto mu vidite nick, upišete ga u IC chatu.</span>
-        <span class="ex">MG Skin: Policajac po skinu "zna" da ste u bandi i pretresa vas bez RP razloga.</span>
+        <span class="def">Korištenje OOC informacija u IC korist.</span>
+        <span class="ex">Primer: Prepoznavanje igrača po imenu iznad glave (Nick).</span>
     </div>
 
     <div class="rule-card">
         <span class="rule-name">PG - Power Gaming</span>
-        <span class="def">Definicija: Nemoguća radnja u pravom životu.</span>
-        <span class="ex">Primer: Ronjenje i korišćenje droge, surfovanje na bajsu, skok sa zgrade bez posledica.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RP2WIN - Roleplay 2 Win</span>
-        <span class="def">Definicija: Korišćenje /me i /do komandi samo da bi ispali pobednik.</span>
-        <span class="ex">Primer: Policajac vas uhapsi, a vi RP-ate da ste "slučajno" našli deagle u šumi.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">QS - Quick Swapping</span>
-        <span class="def">Definicija: Menjanje oružja na Q i E bez korišćenja komandi /me i /do.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CS - Crack Shooting</span>
-        <span class="def">Definicija: Iskorištavanje BUGova sa oružjem (npr. C-Bug).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CK - Character Kill</span>
-        <span class="def">Definicija: Konstantno mučenje nekog igrača (pretnje banom, teranje na novi nalog).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">NonRP - Non RolePlay</span>
-        <span class="def">Definicija: Ometanje igrača u RP radnjama / Kršenje RP Pravila.</span>
-        <span class="ex">Primer: Sletanje helikopterom na sred ulice i blokiranje saobraćaja.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">GFA & DFA (Gun/Drug From Ass)</span>
-        <span class="def">Definicija: Non-RP vađenje oružja ili droge iz inventorija bez komandi.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">NJ - Ninja Jacking</span>
-        <span class="def">Definicija: Krađa vozila u pokretu (izbacivanje igrača na F).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">CR - Chicken Running</span>
-        <span class="def">Definicija: Trčanje cik-cak u toku pucnjave da vas ne pogode.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">BA - Bug Abusing</span>
-        <span class="def">Definicija: Iskorištavanje bugova skripte ili igrice.</span>
+        <span class="def">Radnja koja je nemoguća u stvarnom životu.</span>
+        <span class="ex">Primer: Vožnja sportskog auta uz planinu ili skok sa zgrade bez povrede.</span>
     </div>
 
     <div class="rule-card">
         <span class="rule-name">LTA - Logging to Avoid</span>
-        <span class="def">Definicija: Napuštanje servera (/q) da bi izbegli hapšenje ili kaznu.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">DTA - Die to Avoid</span>
-        <span class="def">Definicija: Samoubistvo (npr. skok s mosta) da bi izbegli policiju.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RPS - RolePlay Superman</span>
-        <span class="def">Definicija: Ponašaš se kao heroj (ideš sam na 10 policajaca, ostaješ u zapaljenom autu).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">SK - Spawn Kill</span>
-        <span class="def">Definicija: Ubistvo igrača odmah čim se stvori (spawnuje).</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">DB - Drive By</span>
-        <span class="def">Definicija: Gaženje ljudi vozilom ili pucanje sa mesta vozača/suvozača.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">RK - Revenge Killing</span>
-        <span class="def">Definicija: Ubistvo iz osvete odmah nakon što ste ubijeni.</span>
-    </div>
-
-    <div class="cat-title">Administracija & Exploiting</div>
-
-    <div class="rule-card">
-        <span class="rule-name">AA & AE (Admin Abusing / Exploiting)</span>
-        <span class="def">Definicija: Iskorištavanje admin moći ili laganje staffa u svoju korist.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">TK - Team Kill</span>
-        <span class="def">Definicija: Ubistvo člana svoje organizacije.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">KOS & MK (Kill on Sight / Multi Kill)</span>
-        <span class="def">Definicija: Ubijanje koga stignete bez ikakvog razloga ili reda.</span>
-    </div>
-
-    <div class="rule-card">
-        <span class="rule-name">MF - Money Farming</span>
-        <span class="def">Definicija: Prebacivanje novca sa lažnih naloga na glavni nalog.</span>
+        <span class="def">Napuštanje servera (/q) da bi izbegli hapšenje ili RP situaciju.</span>
     </div>
 
     <div class="rule-card" style="border-left-color: #ffaa00;">
-        <span class="rule-name">Osnovni Termini</span>
-        <span class="def">IC - In Character (Sve vezano za priču u igri)</span>
-        <span class="def">OOC - Out Of Character (Sve vezano za stvarni život)</span>
-        <span class="def">RL - Real Life (Stvarni život)</span>
+        <span class="rule-name">Vremenske Skraćenice</span>
+        <span class="def">IC - In Character | OOC - Out Of Character | RL - Real Life</span>
     </div>
 
-    <footer style="margin-top: 50px; text-align: center; opacity: 0.5;">
-        <p>© 2026 Mamba Roleplay | Sva prava zadržana</p>
+    <footer>
+        <p>Mamba Roleplay / Developer: mmarko_123</p>
     </footer>
 </div>
 
