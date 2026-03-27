@@ -3,115 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamba RP | Pravila</title>
+    <title>Mamba RP | Sva Pravila</title>
     <style>
         body {
             background-color: #0a0a0a;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #eee;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
-        /* Glavni kontejner */
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
-
-        /* Glassmorphism kartica za naslov */
+        .container { max-width: 1000px; width: 100%; }
+        
         .header-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 25px;
             text-align: center;
             margin-bottom: 30px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+        h1 { color: #00d2ff; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
+        .subtitle { color: #888; margin-top: 10px; }
 
-        h1 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
-        .subtitle { color: #aaa; font-style: italic; }
-
-        /* Stil za svako pravilo */
         .rule-card {
             background: rgba(255, 255, 255, 0.03);
-            border-left: 4px solid #00d2ff;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 5px solid #00d2ff;
             margin-bottom: 15px;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: 0.3s;
         }
-
         .rule-card:hover {
             background: rgba(255, 255, 255, 0.07);
             transform: translateX(10px);
+            border-left-color: #ff0055;
         }
-
-        .rule-name {
-            color: #00d2ff;
-            font-weight: bold;
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .def { color: #fff; font-weight: 500; }
-        .example { color: #00ff88; font-size: 0.95em; display: block; margin-top: 5px; }
+        .rule-name { color: #00d2ff; font-weight: bold; font-size: 1.3em; display: block; }
+        .def { color: #fff; display: block; margin: 5px 0; }
+        .ex { color: #00ff88; font-size: 0.95em; display: block; border-left: 2px solid rgba(0,255,136,0.3); padding-left: 10px; margin-top: 5px; }
         
-        strong { color: #ff0055; } /* Za skraćenice unutar primera */
-
+        .cat-title { color: #ff0055; text-transform: uppercase; margin-top: 40px; margin-bottom: 15px; font-weight: bold; border-bottom: 1px solid #ff0055; display: inline-block; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header-card">
-            <h1>Mamba RP Pravila</h1>
-            <p class="subtitle">Većina vas zna RP Pravila, ali evo za novajlije. Naučite pravila uz primere. Krenimo!</p>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">RP - RolePlay</span>
-            <span class="def">Definicija: Simulacija stvarnog života.</span>
-            <span class="example">Primer: Ponašaš se kao u pravom životu, bez kršenja pravila.</span>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">DM - DeathMatching</span>
-            <span class="def">Definicija: Ubijanje nekog igrača bez ikakvog razloga.</span>
-            <span class="example">Primer: Stojiš ispred banke i bez razloga ubiješ igrača koji prolazi.</span>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">MG - Meta Gaming</span>
-            <span class="def">Definicija: Korišćenje OOC informacija u IC korist.</span>
-            <span class="example">Primer: Vidiš ime iznad glave igrača i odmah ga osloviš imenom u IC chatu.</span>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">PG - Power Gaming</span>
-            <span class="def">Definicija: Radnja koja je nemoguća u stvarnosti (npr. surfovanje na bajsu).</span>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">LTA - Logging to Avoid</span>
-            <span class="def">Definicija: Napuštanje servera (/q) da bi izbegli kaznu ili policiju.</span>
-        </div>
-
-        <div class="rule-card">
-            <span class="rule-name">RPS - RolePlay Superman</span>
-            <span class="def">Definicija: Ponašaš se kao heroj (npr. ideš sam na 10 policajaca).</span>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px; color: #555;">
-            <p>© 2026 Mamba Roleplay | Developed by Lapac</p>
-        </div>
+<div class="container">
+    <div class="header-card">
+        <h1>RP Pravila & Primeri</h1>
+        <p class="subtitle">Većina vas zna RP Pravila, ali evo za novajlije. Naučite pravila uz primere. Krenimo!</p>
     </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RP - RolePlay</span>
+        <span class="def">Definicija: Simulacija stvarnog života</span>
+        <span class="ex">Primer: Ponašaš se kao u pravom životu, bez kršenja rp pravila.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DM - DeathMatching</span>
+        <span class="def">Definicija: Ubijanje nekog igrača bez ikakvog razloga.</span>
+        <span class="ex">Primer: Stojiš ispred banke, pušiš cigaretu i vidiš igrača kako hoda trotoarom, vadiš gun i ubiješ ga.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">MG - Meta Gaming</span>
+        <span class="def">Definicija: Korištenje OOC informacija u IC korist / Mešanje OOC i IC chatova.</span>
+        <span class="ex">MG Nick: Dođete do igrača i pošto mu vidite nick, upišete ga u IC chatu.</span>
+        <span class="ex">MG Skin: Policajac po skinu "zna" da ste u bandi i pretresa vas bez RP razloga.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">PG - Power Gaming</span>
+        <span class="def">Definicija: Nemoguća radnja u pravom životu.</span>
+        <span class="ex">Primer: Ronjenje i korišćenje droge, surfovanje na bajsu, skok sa zgrade bez posledica.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RP2WIN - Roleplay 2 Win</span>
+        <span class="def">Definicija: Korišćenje /me i /do komandi samo da bi ispali pobednik.</span>
+        <span class="ex">Primer: Policajac vas uhapsi, a vi RP-ate da ste "slučajno" našli deagle u šumi.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">QS - Quick Swapping</span>
+        <span class="def">Definicija: Menjanje oružja na Q i E bez korišćenja komandi /me i /do.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">CS - Crack Shooting</span>
+        <span class="def">Definicija: Iskorištavanje BUGova sa oružjem (npr. C-Bug).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">CK - Character Kill</span>
+        <span class="def">Definicija: Konstantno mučenje nekog igrača (pretnje banom, teranje na novi nalog).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">NonRP - Non RolePlay</span>
+        <span class="def">Definicija: Ometanje igrača u RP radnjama / Kršenje RP Pravila.</span>
+        <span class="ex">Primer: Sletanje helikopterom na sred ulice i blokiranje saobraćaja.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">GFA & DFA (Gun/Drug From Ass)</span>
+        <span class="def">Definicija: Non-RP vađenje oružja ili droge iz inventorija bez komandi.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">NJ - Ninja Jacking</span>
+        <span class="def">Definicija: Krađa vozila u pokretu (izbacivanje igrača na F).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">CR - Chicken Running</span>
+        <span class="def">Definicija: Trčanje cik-cak u toku pucnjave da vas ne pogode.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">BA - Bug Abusing</span>
+        <span class="def">Definicija: Iskorištavanje bugova skripte ili igrice.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">LTA - Logging to Avoid</span>
+        <span class="def">Definicija: Napuštanje servera (/q) da bi izbegli hapšenje ili kaznu.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DTA - Die to Avoid</span>
+        <span class="def">Definicija: Samoubistvo (npr. skok s mosta) da bi izbegli policiju.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RPS - RolePlay Superman</span>
+        <span class="def">Definicija: Ponašaš se kao heroj (ideš sam na 10 policajaca, ostaješ u zapaljenom autu).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">SK - Spawn Kill</span>
+        <span class="def">Definicija: Ubistvo igrača odmah čim se stvori (spawnuje).</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">DB - Drive By</span>
+        <span class="def">Definicija: Gaženje ljudi vozilom ili pucanje sa mesta vozača/suvozača.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">RK - Revenge Killing</span>
+        <span class="def">Definicija: Ubistvo iz osvete odmah nakon što ste ubijeni.</span>
+    </div>
+
+    <div class="cat-title">Administracija & Exploiting</div>
+
+    <div class="rule-card">
+        <span class="rule-name">AA & AE (Admin Abusing / Exploiting)</span>
+        <span class="def">Definicija: Iskorištavanje admin moći ili laganje staffa u svoju korist.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">TK - Team Kill</span>
+        <span class="def">Definicija: Ubistvo člana svoje organizacije.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">KOS & MK (Kill on Sight / Multi Kill)</span>
+        <span class="def">Definicija: Ubijanje koga stignete bez ikakvog razloga ili reda.</span>
+    </div>
+
+    <div class="rule-card">
+        <span class="rule-name">MF - Money Farming</span>
+        <span class="def">Definicija: Prebacivanje novca sa lažnih naloga na glavni nalog.</span>
+    </div>
+
+    <div class="rule-card" style="border-left-color: #ffaa00;">
+        <span class="rule-name">Osnovni Termini</span>
+        <span class="def">IC - In Character (Sve vezano za priču u igri)</span>
+        <span class="def">OOC - Out Of Character (Sve vezano za stvarni život)</span>
+        <span class="def">RL - Real Life (Stvarni život)</span>
+    </div>
+
+    <footer style="margin-top: 50px; text-align: center; opacity: 0.5;">
+        <p>© 2026 Mamba Roleplay | Sva prava zadržana</p>
+    </footer>
+</div>
 
 </body>
 </html>
